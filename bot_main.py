@@ -29,4 +29,4 @@ async def on_message(message):
         await message.channel.send(botcommands.bot_commands(message))
 
 
-client.run('MTAyNTc4ODY1NTU1MTM5Nzk1MQ.GhyvHi.mBVegje1ajgplEBSEISA_u_bM5DuLcv4YMc07c')
+client.run('Your Token')
