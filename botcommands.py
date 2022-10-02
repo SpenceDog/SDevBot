@@ -1,5 +1,6 @@
 # This is where that all of our bot commands are handled.
-import rolldice
+from Bot_Commands import rolldice
+
 
 def bot_commands(usr_message):
     usr_command = usr_message
