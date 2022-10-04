@@ -1,0 +1,7 @@
+```
+$hello : Say hi to the bot!
+$good bot : Make the bot happy!
+$roll : Rolls amount of dice and amount of sides. Please enter as $roll (Amount of dice)d(Sides of dice)
+$random fact : See a random fact!
+$help : See the bot help.
+```
