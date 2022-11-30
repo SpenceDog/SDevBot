@@ -4,20 +4,20 @@ from Bot_Commands import randomquote
 from Bot_Commands import help
 
 
-def bot_commands(usr_message):
+def bot_commands(command_id, usr_message):
     usr_command = usr_message
 
-    if usr_command.content.startswith('$hello'):  # Say hi to the users!
+    if usr_command.content.startswith(command_id + 'hello'):  # Say hi to the users!
         return 'Hiya!'
 
-    if usr_command.content.startswith('$good bot'):  # Say hi to the users!
+    if usr_command.content.startswith(command_id + 'good bot'):  # Say hi to the users!
         return '^_^'
 
-    if usr_command.content.startswith('$roll'):  # rolls a dice for us.
+    if usr_command.content.startswith(command_id + 'roll'):  # rolls a dice for us.
         return rolldice.roll_dice(usr_message)
 
-    if usr_command.content.startswith('$random fact'):
+    if usr_command.content.startswith(command_id + 'random fact'):
         return randomquote.random_quote(usr_message)
 
-    if usr_command.content.startswith('$help'):
+    if usr_command.content.startswith(command_id + 'help'):
         return help.help_commands(usr_message)

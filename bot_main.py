@@ -13,6 +13,7 @@ import botcommands
 intents = discord.Intents.default()
 intents.message_content = True
 client = discord.Client(intents=intents)
+CONST_COMMAND_ID = '$' # Constant that we use for commands.
 
 
 @client.event
@@ -26,7 +27,7 @@ async def on_message(message):
         return
 
     else: # If it is not from the bot, we pass it to the Bot Commands.
-        await message.channel.send(botcommands.bot_commands(message))
+        await message.channel.send(botcommands.bot_commands(CONST_COMMAND_ID, message))
 
 
-client.run('Your Token')
+client.run('Your Token Here')
