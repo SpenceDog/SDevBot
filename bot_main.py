@@ -9,6 +9,7 @@
 
 import discord
 import botcommands
+import requests
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -22,10 +23,10 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.author == client.user: # If the message is from the bot, then don't reply.
+    if message.author == client.user:  # If the message is from the bot, then don't reply.
         return
 
-    else: # If it is not from the bot, we pass it to the Bot Commands.
+    else:  # If it is not from the bot, we pass it to the Bot Commands.
         await message.channel.send(botcommands.bot_commands(message))
 
 

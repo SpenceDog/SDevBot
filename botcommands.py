@@ -2,6 +2,7 @@
 from Bot_Commands import rolldice
 from Bot_Commands import randomquote
 from Bot_Commands import help
+from Bot_Commands import dndapi
 
 
 def bot_commands(usr_message):
@@ -21,3 +22,6 @@ def bot_commands(usr_message):
 
     if usr_command.content.startswith('$help'):
         return help.help_commands(usr_message)
+
+    if usr_command.content.startswith('$5e'):
+        return dndapi.dnd_api(usr_message)
