@@ -14,6 +14,7 @@ import requests
 intents = discord.Intents.default()
 intents.message_content = True
 client = discord.Client(intents=intents)
+CONST_COMMAND_ID = '$' # Constant that we use for commands.
 
 
 @client.event
@@ -30,4 +31,4 @@ async def on_message(message):
         await message.channel.send(botcommands.bot_commands(message))
 
 
-client.run('Your Token')
+client.run('Your Token Here')
