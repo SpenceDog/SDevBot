@@ -1,5 +1,4 @@
-import requests
-import json
+from Bot_Commands.DND_API.dnd_api_classes_general import dnd_api_classes_general
 
 def dnd_api(usr_command):
     begin_command = "$5e " # What the beginning of this command is.
@@ -19,16 +18,3 @@ def dnd_api(usr_command):
 
     return str(command_message) # Sends it in the channel it was called from.
 
-def dnd_api_classes_general(command_search, break_line):
-    http_response = requests.get("https://www.dnd5eapi.co/api/" + command_search + "/")  # Call the API.
-    api_data = http_response.json()  # Saves the raw JSON of our request.
-    resultsList = api_data['results']  # Gets the total amount of results.
-    api_response = " " # Sets up are variable for the response.
-
-    for http_response in resultsList:  # Loops through the list of our responses and generates our response.
-        api_response += break_line
-        api_response += http_response['name']
-        api_response += break_line
-
-
-    return str(api_response)  # Sends it in the channel it was called from.
