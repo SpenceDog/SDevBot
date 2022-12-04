@@ -23,5 +23,5 @@ def bot_commands(command_id, usr_message):
     if usr_command.content.startswith(command_id + 'help'):
         return help.help_commands(usr_message)
 
-    if usr_command.content.startswith('$5e'):
+    if usr_command.content.startswith(command_id + '5e'):
         return dndapi.dnd_api(usr_message)
