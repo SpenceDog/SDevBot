@@ -19,7 +19,13 @@ def dnd_api(usr_command):
             http_response = requests.get("https://www.dnd5eapi.co/api/" + search_query + "/")  # Call the API.
             api_data = http_response.json()  # Saves the raw JSON of our request.
 
-            command_message = api_data["hit_die"] # Returns our query.
+            command_message = f"""
+Class: class_name
+Hit Dice: hit_die
+Proficiencies (Choose choose_prof: 
+ """
+
+            command_message = command_message.replace("class_name", str(api_data["name"])).replace("hit_die", str(api_data["hit_die"])) # Replaces with our values.
 
 
     except:
